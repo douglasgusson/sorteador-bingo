@@ -16,12 +16,11 @@ table {
     font-size: 20px;
 }
 
-th {
+th, td {
     height: 25px;
 }
 
 .numero {
-    height: 30px;
     background: #666;
     border: 3px solid #FFF;
     color: #FFF;
