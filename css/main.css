@@ -1,10 +1,9 @@
 /* Fonte */
 body, input, button {
-    font-family: Georgia, Times New Roman, Times, serif;
+    font-family: 'Chelsea Market', Georgia, serif;
 }
 
 h1 {
-    font-family: 'Chelsea Market', Georgia, serif;
     text-align: center;
 }
 
