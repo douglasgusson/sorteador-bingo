@@ -48,8 +48,39 @@ th, td {
     margin: 0 5% 0 5%;
 }
 
-.botoes {
+.botao {
+    display: inline-block;
+    background-color: #ccc;
+    color: #FFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 0px;
+}
 
+.botao-sortear {
+    background-color: #2ecc71;
+}
+
+.botao-sortear:hover {
+    background-color: #27ae60;
+}
+
+.botao-sortear:active {
+    background-color: #2ecc71;
+}
+
+.botao-recomecar {
+    background-color: #e67e22;
+}
+
+.botao-recomecar:hover {
+    background-color: #d35400;
+}
+
+.botao-recomecar:active {
+    background-color: #e67e22;
 }
 
 #jogada-atual {
