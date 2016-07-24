@@ -4,6 +4,9 @@ var $tds = document.querySelectorAll('.numero');
 var $jogadaAtual = document.querySelector('#jogada-atual');
 var $botaoSortear = document.querySelector('#sortear');
 var $botaoRecomecar = document.querySelector('#recomecar');
+var $playerAudio = document.querySelector('#audio');
+var $somMp3 = document.querySelector('#som-mp3');
+var $somOgg = document.querySelector('#som-ogg');
 
 // preenche um array com numeros de 1 a 75
 for (var i=1; i<=75; i++) {
@@ -49,7 +52,18 @@ function marcarSorteado(sorteado) {
         for (var i = 0; i < $tds.length; i++) {
             if (parseInt($tds[i].textContent) == sorteado) {
                 $tds[i].className += ' animated bounceIn sorteado';
+                playAudio(sorteado);
             }
         }
     }
+}
+
+function playAudio(x) {
+    if (x > 2) {
+        x = 'beep';
+    }
+    $somMp3.setAttribute('src', 'audio/' + x + '.mp3');
+    $somOgg.setAttribute('src', 'audio/' + x + '.ogg');
+    $playerAudio.load();
+    $playerAudio.play();
 }
