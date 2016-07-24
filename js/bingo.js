@@ -28,7 +28,7 @@ $botaoSortear.addEventListener('click', function() {
 
         marcarSorteado(sorteado);
     } else {
-        $jogadaAtual.setAttribute('value', 'Bingo encerrado. Clique no botão "Recomeçar"!');
+        $jogadaAtual.setAttribute('value', 'Encerrado. Clique no botão "Recomeçar"!');
     }
 });
 
