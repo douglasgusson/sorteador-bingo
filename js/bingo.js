@@ -48,7 +48,7 @@ function marcarSorteado(sorteado) {
     if ($tds != null) {
         for (var i = 0; i < $tds.length; i++) {
             if (parseInt($tds[i].textContent) == sorteado) {
-                $tds[i].className += ' sorteado';
+                $tds[i].className += ' animated bounceIn sorteado';
             }
         }
     }
