@@ -3,7 +3,6 @@ var sorteado, cont = 0, numeros = [];
 var $tds = document.querySelectorAll('.numero');
 var $jogadaAtual = document.querySelector('#jogada-atual');
 var $botaoSortear = document.querySelector('#sortear');
-var $botaoRecomecar = document.querySelector('#recomecar');
 var $playerAudio = document.querySelector('#audio');
 var $somMp3 = document.querySelector('#som-mp3');
 var $somOgg = document.querySelector('#som-ogg');
@@ -32,24 +31,16 @@ $botaoSortear.addEventListener('click', function() {
         }
 
         marcarSorteado(sorteado);
+    } else if (cont == 75) {
+        $jogadaAtual.setAttribute('value', 'Encerrado!');
+        $botaoSortear.className += ' animated bounceIn botao-recomecar';
+        $botaoSortear.textContent = 'RECOMEÇAR';
+        cont++;            
     } else {
-        $jogadaAtual.setAttribute('value', 'Encerrado. Clique no botão "Recomeçar"!');
+        recomecar();
     }
 });
 
-$botaoRecomecar.addEventListener('click',function() {
-
-    if ($tds != null) {
-        for (var i = 0; i < $tds.length; i++) {
-                $tds[i].className = 'numero';
-        }
-    }
-    
-    cont = 0;
-    preencherArray();
-    
-    //location.reload();
-});
 
 function sortear() {
     var index = Math.round(Math.random() * (74 - cont));
@@ -59,22 +50,29 @@ function sortear() {
     return x;
 }
 
+function recomecar() {    
+    if ($tds != null) {
+        for (var i = 0; i < $tds.length; i++) {
+                $tds[i].className = 'numero';
+        }
+    }    
+    $jogadaAtual.setAttribute('value', '');
+    $botaoSortear.className = 'botao botao-sortear';
+    $botaoSortear.textContent = 'SORTEAR';
+    cont = 0;
+    preencherArray();
+}
+
 function marcarSorteado(sorteado) {
     if ($tds != null) {
         for (var i = 0; i < $tds.length; i++) {
             if (parseInt($tds[i].textContent) == sorteado) {
                 $tds[i].className += ' animated bounceIn sorteado';
-                playAudio(sorteado);
+                $playerAudio.load();
+                $playerAudio.play();
             }
         }
     }
-}
-
-function playAudio(x) {
-    $somMp3.setAttribute('src', 'audio/beep.mp3');
-    $somOgg.setAttribute('src', 'audio/beep.ogg');
-    $playerAudio.load();
-    $playerAudio.play();
 }
 
 preencherArray();

@@ -14,12 +14,9 @@
     <body>
         <h1>Sorteador de Bingo</h1>
         <div class="comandos">
-            <p class="">
-                <button class="botao botao-recomecar" type="button" id="recomecar" name="button">Recomeçar</button>
-            </p>
             <audio id="audio">
-                <source id="som-mp3" src="" type="audio/mpeg">
-                <source id="som-ogg" src="" type="audio/ogg">
+                <source id="som-mp3" src="audio/beep.mp3" type="audio/mpeg">
+                <source id="som-ogg" src="audio/beep.ogg" type="audio/ogg">
                 Your browser does not support the audio element.
             </audio>
             <input type="text" id="jogada-atual" value="" disabled="disabled">
@@ -144,7 +141,7 @@
         </table>
 
         <center>
-          <button class="botao botao-sortear" type="button" id="sortear" name="button">SORTEAR NÚMERO</button>
+          <button class="botao botao-sortear" type="button" id="sortear" name="button">SORTEAR</button>
         </center>
 
         <script type="text/javascript" src="js/bingo.js"></script>
