@@ -9,8 +9,10 @@ var $somMp3 = document.querySelector('#som-mp3');
 var $somOgg = document.querySelector('#som-ogg');
 
 // preenche um array com numeros de 1 a 75
-for (var i=1; i<=75; i++) {
-   numeros[i-1] = i;
+function preencherArray() {
+    for (var i=1; i<=75; i++) {
+       numeros[i-1] = i;
+    }
 }
 
 $botaoSortear.addEventListener('click', function() {
@@ -36,7 +38,17 @@ $botaoSortear.addEventListener('click', function() {
 });
 
 $botaoRecomecar.addEventListener('click',function() {
-        location.reload();
+
+    if ($tds != null) {
+        for (var i = 0; i < $tds.length; i++) {
+                $tds[i].className = 'numero';
+        }
+    }
+    
+    cont = 0;
+    preencherArray();
+    
+    //location.reload();
 });
 
 function sortear() {
@@ -59,11 +71,10 @@ function marcarSorteado(sorteado) {
 }
 
 function playAudio(x) {
-    if (x > 2) {
-        x = 'beep';
-    }
-    $somMp3.setAttribute('src', 'audio/' + x + '.mp3');
-    $somOgg.setAttribute('src', 'audio/' + x + '.ogg');
+    $somMp3.setAttribute('src', 'audio/beep.mp3');
+    $somOgg.setAttribute('src', 'audio/beep.ogg');
     $playerAudio.load();
     $playerAudio.play();
 }
+
+preencherArray();
