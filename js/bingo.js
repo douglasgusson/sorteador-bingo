@@ -31,11 +31,7 @@ $botaoSortear.addEventListener('click', function() {
         }
 
         marcarSorteado(sorteado);
-    } else if (cont == 75) {
-        $jogadaAtual.setAttribute('value', 'Encerrado!');
-        $botaoSortear.className += ' animated bounceIn botao-recomecar';
-        $botaoSortear.textContent = 'RECOMEÇAR';
-        cont++;            
+          
     } else {
         recomecar();
     }
@@ -47,6 +43,11 @@ function sortear() {
     var x = numeros[index];
     numeros.splice(index, 1);
     cont++;
+    if (numeros.length == 0) {
+        $jogadaAtual.setAttribute('value', 'Encerrado!');
+        $botaoSortear.className += ' animated bounceIn botao-recomecar';
+        $botaoSortear.textContent = 'RECOMEÇAR';     
+    }
     return x;
 }
 
