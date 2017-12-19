@@ -1,19 +1,6 @@
 (function() {
   'use strict';
 
-/*
-    var sorteado, cont = 0, numeros = [];
-
-    var $tds = document.querySelectorAll('.numero');
-    var $jogadaAtual = document.querySelector('#jogada-atual');
-    var $botaoRecomecar = document.querySelector('#recomecar');
-    var $botaoSortear = document.querySelector('#sortear');
-    var $playerAudio = document.querySelector('#audio');
-    var $somMp3 = document.querySelector('#som-mp3');
-    var $somOgg = document.querySelector('#som-ogg');
-
-*/
-
     var app = {
         container : document.querySelector('.main'),
         carrega : document.querySelector('.carrega'),
@@ -110,5 +97,11 @@
 
 
     preencherArray();
+
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./service-worker.js')
+             .then(function() { console.log('Service Worker Registered'); });
+    }
 
 })();
