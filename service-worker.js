@@ -4,15 +4,9 @@ var filesToCache = [
   '/',
   '/index.html',
   '/js/bingo.js',
-  '/js/jquery-3.2.1.min.js',
-  '/js/materialize.min.js',
-  '/css/animate.css',
   '/css/estilo.css',
   '/css/materialize.min.css',
-  '/img/icon.png',
-  '/img/icon.svg',
-  '/audio/beep.mp3',
-  '/audio/beep.ogg'
+  '/img/icon.svg'
 ];
 
 self.addEventListener('install', function(e) {
