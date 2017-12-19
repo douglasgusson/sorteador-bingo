@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Sorteador de Bingo">
-        <meta name="author" content="Douglas Gusson">
-        <title>Sorteador de Bingo</title>
-        <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <h1>Sorteador de Bingo</h1>
-        <div class="comandos">
-            <audio id="audio">
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <meta charset="utf-8">
+    <title>Sorteador de Bingo</title>
+    <link rel=icon href="img/icon.png" sizes="any">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-wrapper grey">
+        <a href="#" class="brand-logo left icone"><img src="img/icon.svg" height="50"></a>
+        <ul id="nav-mobile" class="right">
+          <li><a class="waves-effect" href="#!" id="recomecar"><i class="material-icons">refresh</i></a></li>
+          <li><a class="waves-effect modal-trigger" href="#info"><i class="material-icons">info_outline</i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container main" hidden>
+      <div class="row">
+        <audio id="audio">
                 <source id="som-mp3" src="audio/beep.mp3" type="audio/mpeg">
                 <source id="som-ogg" src="audio/beep.ogg" type="audio/ogg">
                 Your browser does not support the audio element.
-            </audio>
-            <input type="text" id="jogada-atual" value="" disabled="disabled">
-        </div>
-        <table>
+        </audio>  
+        <input type="text" placeholder="Novo jogo" id="jogada-atual" value="" disabled="disabled">
+        <table class="centered">
             <thead>
                 <tr>
                     <th id="b">B</th>
@@ -139,11 +151,52 @@
                 </tr>
             </tbody>
         </table>
+        <a class="waves-effect waves-light btn-large btn-sortear" id="sortear">SORTEAR</a>
+      </div>      
+    </div>
 
-        <center>
-          <button class="botao botao-sortear" type="button" id="sortear" name="button">SORTEAR</button>
-        </center>
+  <div class="carrega">
+    <div class="preloader-wrapper small active">
+      <div class="spinner-layer spinner-green-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <script type="text/javascript" src="js/bingo.js"></script>
-    </body>
+
+    <!-- Modal Structure -->
+    <div id="info" class="modal">
+      <div class="modal-content">
+        <h5>Sobre</h5>
+        <hr>
+        <p><b>Sorteador de Bingo</b></p>
+        <p>Criado por <a href="https://github.com/douglasgusson" target="_blank">Douglas Gusson</a></p>
+        <p><a href="mailto:douglasgusson@gmail.com">douglasgusson@gmail.com</a></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect btn-flat">OK</a>
+      </div>
+    </div>
+
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/bingo.js"></script>
+
+    <script type="text/javascript">
+      
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+
+    </script>
+
+  </body>
 </html>
