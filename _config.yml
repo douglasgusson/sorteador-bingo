@@ -1,0 +1,19 @@
+# Site settings
+title: Sorteador de Bingo
+description: > # this means to ignore newlines until "baseurl:"
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://sorteadordebingo.gusson.org/" # the base hostname & protocol for your site
+author: "Douglas Gusson"
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+
+exclude: ["Gemfile", "Gemfile.lock", "README.md"]

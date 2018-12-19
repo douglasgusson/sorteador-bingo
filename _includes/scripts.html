@@ -1,0 +1,19 @@
+<script src="{{ '/assets/js/jquery-3.2.1.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/js/materialize.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/js/bingo.js' | prepend: site.baseurl }}"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(function () {
+        console.log('Service Worker Registered');
+      })
+      .catch(function () {
+        console.warn('Service Worker Failed');
+      });
+  }
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+   	 $('.modal').modal();
+  });
+</script>

@@ -1,12 +1,44 @@
----
-layout: default
-lang: pt-br
----
-<div class="container main" hidden>
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+	<meta name="theme-color" content="#000000">
+  <link rel="manifest" href="/manifest.json">
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Sorteador de Bingo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Sorteador de Bingo" />
+<meta name="author" content="Douglas Gusson" />
+<meta property="og:locale" content="pt_br" />
+<link rel="canonical" href="/" />
+<meta property="og:url" content="/" />
+<meta property="og:site_name" content="Sorteador de Bingo" />
+<script type="application/ld+json">
+{"headline":"Sorteador de Bingo","@type":"WebSite","url":"/","name":"Sorteador de Bingo","author":{"@type":"Person","name":"Douglas Gusson"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link href="/assets/img/icon.png" rel="shortcut icon">
+</head>
+	<body>
+		<nav>
+  <div class="nav-wrapper grey">
+    <a href="" class="brand-logo left icone">
+    	<img src="/assets/img/icon.svg" height="50" alt="Circulo com a letra B no centro">
+    </a>
+    <ul id="nav-mobile" class="right">
+      <li><a class="waves-effect" href="#!" id="recomecar"><i class="material-icons">refresh</i></a></li>
+      <li><a class="waves-effect modal-trigger" href="#info"><i class="material-icons">info_outline</i></a></li>
+    </ul>
+  </div>
+</nav>
+		<div>
+		<div class="container main" hidden>
   <div class="row">
     <audio id="audio">
-            <source id="som-mp3" src="{{ '/assets/audio/beep.mp3' | prepend: site.baseurl }}" type="audio/mpeg">
-            <source id="som-ogg" src="{{ '/assets/audio/beep.ogg' | prepend: site.baseurl }}" type="audio/ogg">
+            <source id="som-mp3" src="/assets/audio/beep.mp3" type="audio/mpeg">
+            <source id="som-ogg" src="/assets/audio/beep.ogg" type="audio/ogg">
             Your browser does not support the audio element.
     </audio>  
     <input type="text" placeholder="Novo jogo" id="jogada-atual" value="" disabled="disabled">
@@ -145,3 +177,38 @@ lang: pt-br
     <a href="#!" class="modal-action modal-close waves-effect btn-flat">OK</a>
   </div>
 </div>
+		</div>
+		<div class="carrega">
+  <div class="preloader-wrapper small active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+		<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/materialize.min.js"></script>
+<script src="/assets/js/bingo.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(function () {
+        console.log('Service Worker Registered');
+      })
+      .catch(function () {
+        console.warn('Service Worker Failed');
+      });
+  }
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+   	 $('.modal').modal();
+  });
+</script>
+	</body>
+</html>
