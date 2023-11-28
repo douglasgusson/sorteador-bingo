@@ -17,3 +17,4 @@ plugins:
   - jekyll-seo-tag
 
 exclude: ["Gemfile", "Gemfile.lock", "README.md"]
+include: ["_redirects"]
